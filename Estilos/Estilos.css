@@ -1,0 +1,113 @@
+/* Configuración básica */
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+/* Estilo del encabezado */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px; /* Tamaño más grande */
+  background-color: #222;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.5rem; /* Aumentar tamaño del texto */
+}
+
+.left, .right {
+  flex: 1;
+  text-align: start;
+}
+
+.right {
+  text-align: end;
+}
+
+.center {
+  flex: 1;
+  text-align: center;
+  color: white;
+}
+.center i {
+  font-size: 2.5rem; /* Tamaño del icono */
+  color: white; /* Color del icono */
+  display: inline-block; /* Asegura que se alinee correctamente */
+}
+
+.icon {
+  font-size: 2rem; /* Tamaño del icono */
+  color: white;
+}
+
+/* Estilo del contenido principal */
+main {
+  margin-top: 40px; /* Aumento del espacio entre el header y la imagen */
+}
+
+.welcome-container {
+  position: relative;
+  display: inline-block;
+  text-align: center; /* Asegura que el texto y la imagen se centren */
+}
+
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  padding: 10px 20px;
+  color: white;
+  z-index: 2;
+}
+
+.main-image {
+  width: 100vw;        /* Ocupa todo el ancho de la ventana del navegador */
+  height: 70vh;        /* La altura es el 50% de la altura de la ventana del navegador */
+  object-fit: cover;   /* La imagen cubre el área sin distorsionarse */
+  margin-top: 40px;    /* Añadir espacio entre la imagen y el header */
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between; /* Separa las columnas de izquierda y derecha */
+  align-items: flex-start;
+  margin-top: 80px; /* Igual al margen entre la imagen y el header */
+  padding: 20px 30px; /* Espaciado interno del contenedor */
+  background-color: black; /* Mismo color que la página */
+  color: white; /* Color del texto */
+  max-width: 80%; /* No ocupa todo el ancho de la pantalla */
+  margin-left: auto; /* Centra el contenedor horizontalmente */
+  margin-right: auto; /* Centra el contenedor horizontalmente */
+}
+
+.about-left {
+  flex: 1; /* La columna izquierda ocupa espacio fijo */
+  padding-right: 30px; /* Espaciado entre el título y la biografía */
+  text-align: left; /* Texto alineado a la izquierda */
+}
+
+.about-right {
+  flex: 1; /* La columna derecha también ocupa espacio fijo */
+  text-align: right; /* Alinea el texto completamente a la derecha */
+}
+
+.about-left h2 {
+  font-size: 2rem; /* Tamaño del título */
+  margin: 0;
+}
+
+.about-right p {
+  font-size: 1rem;
+  line-height: 1.5; /* Espaciado entre líneas */
+  margin: 0;
+}
