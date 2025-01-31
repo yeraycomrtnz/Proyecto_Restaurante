@@ -1,62 +1,128 @@
-/* Configuración básica */
+/* Estilos generales */
 body {
   margin: 0;
-  font-family: "Times New Roman", Times, serif;
-  background-color: black;
+  padding: 0;
+  background: #000;
+  font-family: 'Cormorant Garamond', serif;
   color: white;
-  text-align: center;
+  line-height: 1.6;
 }
 
-/* Estilo del encabezado */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px; /* Tamaño más grande */
-  background-color: #222;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
+/* Barra de navegación */
+nav {
+  position: fixed;
+  top: 0;
   width: 100%;
-  font-size: 1.5rem; /* Aumentar tamaño del texto */
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  padding: 25px 0;
+  z-index: 1000;
+  transition: 0.3s all ease;
 }
 
-.left, .right {
-  flex: 1;
-  text-align: start;
+nav.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 15px 0;
 }
 
-.right {
-  text-align: end;
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 40px;
 }
 
-.center {
-  flex: 1;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: 0.3s all ease;
+}
+
+nav ul li a:hover {
+  color: #E3B23C;
+}
+
+/* Botón Reservar */
+.btn-reservar {
+  background: transparent;
+  border: 2px solid #E3B23C;
+  padding: 8px 25px;
+  border-radius: 30px;
+  color: white;
+  transition: 0.3s all ease;
+}
+
+.btn-reservar:hover {
+  background: #E3B23C;
+  color: white;
+}
+
+/* Hero Header */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('tu-imagen-de-fondo.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: white;
-}
-.center i {
-  font-size: 2.5rem; /* Tamaño del icono */
-  color: white; /* Color del icono */
-  display: inline-block; /* Asegura que se alinee correctamente */
+  padding-top: 80px;
 }
 
-.icon {
-  font-size: 2rem; /* Tamaño del icono */
+.overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.highlight {
+  color: #E3B23C;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin: 15px 0 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 35px;
+  background: transparent;
+  border: 2px solid #E3B23C;
+  color: #E3B23C;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s all ease;
+}
+
+.btn:hover {
+  background: #E3B23C;
   color: white;
 }
 
-/* Estilo del contenido principal */
+/* Contenido principal */
 main {
-  margin-top: 40px; /* Aumento del espacio entre el header y la imagen */
+  margin-top: 80px;
 }
 
 .welcome-container {
   position: relative;
-  display: inline-block;
-  text-align: center; /* Asegura que el texto y la imagen se centren */
+  width: 100%;
+  text-align: center;
 }
 
 .welcome-text {
@@ -65,49 +131,46 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4rem;
-  padding: 10px 20px;
   color: white;
   z-index: 2;
+  width: 100%;
 }
 
 .main-image {
-  width: 100vw;        /* Ocupa todo el ancho de la ventana del navegador */
-  height: 70vh;        /* La altura es el 50% de la altura de la ventana del navegador */
-  object-fit: cover;   /* La imagen cubre el área sin distorsionarse */
-  margin-top: 40px;    /* Añadir espacio entre la imagen y el header */
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  display: block;
 }
 
+/* Sección Quiénes somos */
 .about-container {
   display: flex;
-  justify-content: space-between; /* Separa las columnas de izquierda y derecha */
-  align-items: flex-start;
-  margin-top: 80px; /* Igual al margen entre la imagen y el header */
-  padding: 20px 30px; /* Espaciado interno del contenedor */
-  background-color: black; /* Mismo color que la página */
-  color: white; /* Color del texto */
-  max-width: 80%; /* No ocupa todo el ancho de la pantalla */
-  margin-left: auto; /* Centra el contenedor horizontalmente */
-  margin-right: auto; /* Centra el contenedor horizontalmente */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+  gap: 50px;
 }
 
 .about-left {
-  flex: 1; /* La columna izquierda ocupa espacio fijo */
-  padding-right: 30px; /* Espaciado entre el título y la biografía */
-  text-align: left; /* Texto alineado a la izquierda */
-}
-
-.about-right {
-  flex: 1; /* La columna derecha también ocupa espacio fijo */
-  text-align: right; /* Alinea el texto completamente a la derecha */
+  flex: 1;
+  border-right: 2px solid #E3B23C;
+  padding-right: 50px;
 }
 
 .about-left h2 {
-  font-size: 2rem; /* Tamaño del título */
+  font-size: 2.5rem;
   margin: 0;
 }
 
+.about-right {
+  flex: 1;
+  padding-left: 50px;
+}
+
 .about-right p {
-  font-size: 1rem;
-  line-height: 1.5; /* Espaciado entre líneas */
+  font-size: 1.1rem;
+  line-height: 1.8;
   margin: 0;
 }

@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Bienvenida</title>
+    <title>Cocina Gallega</title>
     <link rel="stylesheet" href="Estilos/Estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="left">RAYNFOOD</div>
-            <div class="center"><i class="fa-solid fa-house" style="color: #ffffff;"></i></div>
-            <div class="right">MENÚ</div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">zorra</a></li>
+            <li><a href="#restaurante">Restaurante</a></li>
+            <li><a href="#menu">Menús</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#reservar" class="btn-reservar">Reservar</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="overlay">
+            <h1>Cocina <span class="highlight">GALLEGA</span></h1>
+            <p>Con toques contemporáneos</p>
+            <a href="#menu" class="btn">Ver Menú</a>
         </div>
     </header>
 
@@ -22,6 +33,7 @@
             <img src="imagenes/FotoRestaurante.png" alt="Restaurante Interior" class="main-image">
         </div>
     </main>
+    
     <div class="about-container">
         <div class="about-left">
             <h2>Quiénes somos</h2>
@@ -33,11 +45,17 @@
                 un ambiente acogedor y un servicio de alta calidad para que cada visita sea inolvidable.
             </p>
         </div>
-    </div>    
-    
-    
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
-
-
- 
